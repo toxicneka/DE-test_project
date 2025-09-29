@@ -1,0 +1,4 @@
+# ETL Schedule
+*/5 * * * * /usr/local/bin/python3 /app/scripts/extract.py >> /var/log/cron.log 2>&1
+*/10 * * * * /usr/local/bin/python3 /app/scripts/transform.py >> /var/log/cron.log 2>&1
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Top Users Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Top {{ total_users }} Users by Posts Count</h1>
+        <div class="last-updated">Last updated: {{ users[0].calculated_at if users else 'No data' }}</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>User ID</th>
+                    <th>Posts Count</th>
+                    <th>Calculated At</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.user_id }}</td>
+                    <td>{{ user.posts_cnt }}</td>
+                    <td>{{ user.calculated_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {% if not users %}
+        <div class="no-data">
+            <p>No data available. Please check if ETL processes are running.</p>
+        </div>
+        {% endif %}
+        
+        <div class="footer">
+            <p>Data updates every 10 minutes via cron jobs</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -35,26 +35,6 @@ docker-compose exec etl pytest tests/ -v
 docker-compose exec etl ruff check src/ tests/
 ```
 
-## Cron расписание
-```
-Extract: каждые 5 минут
-Transform: каждые 10 минут
-```
-
-### **.env.example** (шаблон для переменных окружения)
-
-```env
-DB_HOST=db
-DB_NAME=postgres
-DB_USER=postgres
-DB_PASSWORD=password
-
-API_URL=https://jsonplaceholder.typicode.com/posts
-
-DASHBOARD_HOST=0.0.0.0
-DASHBOARD_PORT=8000
-```
-
 ## Структура репозитория:
 ```
 de-project/

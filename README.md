@@ -29,10 +29,10 @@ docker-compose exec db psql -U postgres -d postgres -c "SELECT * FROM top_users_
 ## Тестирование
 
 ```bash
-docker-compose exec etl pytest tests/ -v
+docker-compose exec etl pytest scripts/ tests/ -v
 ```
-```
-docker-compose exec etl ruff check src/ tests/
+```bash
+docker-compose exec etl ruff check scripts/ tests/
 ```
 
 ## Структура репозитория:

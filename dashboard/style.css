@@ -1,7 +1,6 @@
-/* Основные стили */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #ebebf3;
     color: #333;
     margin: 0;
     padding: 20px;
@@ -20,7 +19,7 @@ body {
 h1 {
     text-align: center;
     margin-top: 0;
-    color: #4c8bf5;
+    color: #0574fa;
     font-size: 2.2em;
     margin-bottom: 10px;
 }
@@ -49,7 +48,7 @@ th, td {
 }
 
 th {
-    background-color: #4c8bf5;
+    background-color: #0574fa;
     color: white;
     font-weight: 600;
     text-transform: uppercase;

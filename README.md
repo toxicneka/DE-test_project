@@ -1,12 +1,6 @@
 # Data Engineering ETL Pipeline with Dashboard
 
-Проект для извлечения, трансформации и загрузки данных о постах пользователей с веб-дашбордом.
-
-## Архитектура
-
-- **db**: PostgreSQL база данных
-- **etl**: ETL сервис с cron-задачами
-- **dashboard**: FastAPI веб-дашборд
+Проект для извлечения, трансформации и загрузки данных о постах пользователей с веб-дашбордом
 
 ## Быстрый старт
 
@@ -17,13 +11,11 @@ chmod +x run.sh && ./run.sh
 ## Просмотр результатов
 
 - **Дашборд**: http://localhost:8000/top
-- **База данных**: localhost:5432
 - **Логи ETL**: `docker-compose logs -f etl`
 
 ## Тестирование
 
 ```bash
-# Запуск тестов и линтера
 docker-compose exec etl pytest tests/ -v
 docker-compose exec etl ruff check src/ tests/
 ```

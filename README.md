@@ -12,6 +12,10 @@ chmod +x run.sh && ./run.sh
 
 - **Дашборд**: http://localhost:8000/top
 - **Логи ETL**: `docker-compose logs -f etl`
+- **Общее количество постов пользователей** 
+`docker-compose exec db psql -U postgres -d postgres -c "SELECT COUNT(*) as total_posts FROM raw_users_by_posts;"`
+- **Топ-5 пользователей по количеству постов** 
+`docker-compose exec db psql -U postgres -d postgres -c "SELECT * FROM top_users_by_posts ORDER BY posts_cnt DESC LIMIT 5;"`
 
 ## Тестирование
 
@@ -29,16 +33,13 @@ docker-compose exec etl ruff check src/ tests/
 ### **.env.example** (шаблон для переменных окружения)
 
 ```env
-# Database configuration
 DB_HOST=db
 DB_NAME=postgres
 DB_USER=postgres
 DB_PASSWORD=password
 
-# API configuration
 API_URL=https://jsonplaceholder.typicode.com/posts
 
-# Dashboard configuration
 DASHBOARD_HOST=0.0.0.0
 DASHBOARD_PORT=8000
 ```

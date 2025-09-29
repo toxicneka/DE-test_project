@@ -11,11 +11,20 @@ chmod +x run.sh && ./run.sh
 ## Просмотр результатов
 
 - **Дашборд**: http://localhost:8000/top
-- **Логи ETL**: `docker-compose logs -f etl`
+- **Логи ETL**: 
+```bash
+docker-compose logs -f etl
+```
 - **Общее количество постов пользователей** 
-`docker-compose exec db psql -U postgres -d postgres -c "SELECT COUNT(*) as total_posts FROM raw_users_by_posts;"`
+
+```bash
+docker-compose exec db psql -U postgres -d postgres -c "SELECT COUNT(*) as total_posts FROM raw_users_by_posts;"
+```
 - **Топ-5 пользователей по количеству постов** 
-`docker-compose exec db psql -U postgres -d postgres -c "SELECT * FROM top_users_by_posts ORDER BY posts_cnt DESC LIMIT 5;"`
+
+```bash
+docker-compose exec db psql -U postgres -d postgres -c "SELECT * FROM top_users_by_posts ORDER BY posts_cnt DESC LIMIT 5;"
+```
 
 ## Тестирование
 
@@ -28,8 +37,8 @@ docker-compose exec etl ruff check src/ tests/
 
 ## Cron расписание
 ```
-- Extract: каждые 5 минут
-- Transform: каждые 10 минут
+Extract: каждые 5 минут
+Transform: каждые 10 минут
 ```
 
 ### **.env.example** (шаблон для переменных окружения)

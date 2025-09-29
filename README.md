@@ -21,6 +21,8 @@ chmod +x run.sh && ./run.sh
 
 ```bash
 docker-compose exec etl pytest tests/ -v
+```
+```
 docker-compose exec etl ruff check src/ tests/
 ```
 
@@ -44,7 +46,7 @@ DASHBOARD_HOST=0.0.0.0
 DASHBOARD_PORT=8000
 ```
 
-## 📊 Структура репозитория:
+## Структура репозитория:
 ```
 de-project/
 ├── .gitignore
